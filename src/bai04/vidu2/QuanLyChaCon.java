@@ -12,6 +12,9 @@ public class QuanLyChaCon {
 		obj1.phuongthuc3();
 		obj1.vidugoiprivate();
 		System.out.println(obj1);
+		
+		LopCon obj2 = new LopCon("Phong", 100, 9.9, "K21 CNTT");
+		obj2.phuongthuc2();
 	}
 
 }
