@@ -10,6 +10,8 @@ public class QuanLyChaCon {
 		System.out.println(obj1);
 		obj1.phuongthuc2();
 		obj1.phuongthuc3();
+		obj1.vidugoiprivate();
+		System.out.println(obj1);
 	}
 
 }
