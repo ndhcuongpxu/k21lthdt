@@ -5,16 +5,7 @@ public class KyBinh extends NhanVat {
 	private boolean giao;
 	private boolean cung;
 	private boolean ngua;
-	/**
-	 * @param ten
-	 * @param id
-	 * @param gioitinh
-	 * @param nangluong
-	 * @param guom
-	 * @param giao
-	 * @param cung
-	 * @param ngua
-	 */
+	
 	public KyBinh(String ten, String id, byte gioitinh, double nangluong, boolean guom, boolean giao, boolean cung,
 			boolean ngua) {
 		super(ten, id, gioitinh, nangluong);
@@ -71,13 +62,16 @@ public class KyBinh extends NhanVat {
 	public void setNgua(boolean ngua) {
 		this.ngua = ngua;
 	}
+	
 	public String toString() {
 		return "KyBinh [guom=" + guom + ", giao=" + giao + ", cung=" + cung + ", ngua=" + ngua + "]";
 	}
+	
 	public void hanhdong() {
 		// TODO Auto-generated method stub
 		System.out.println("Coi ngua va ban ten");
 	}
+	
 	public void sucmanh() {
 		// TODO Auto-generated method stub
 		double energy = this.getNangluong()*2;
