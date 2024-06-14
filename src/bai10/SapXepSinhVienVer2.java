@@ -14,8 +14,8 @@ public class SapXepSinhVienVer2 {
 		List<SinhVien> dssv = new ArrayList<SinhVien>();
 		dssv.add(new SinhVien("Loc", 10, 20));		
 		dssv.add(new SinhVien("Nhat", 8, 18));
-		dssv.add(new SinhVien("Binh", 9, 19));
-		//Sap xep theo ho ten
+		dssv.add(new SinhVien("Binh", 9, 22));
+		System.out.println("SAP XEP THEO HO TEN");
 		Collections.sort(dssv, new Comparator<SinhVien>() {
 
 			@Override
@@ -28,7 +28,7 @@ public class SapXepSinhVienVer2 {
 			System.out.println(item);
 		}
 		
-		//Sap xep theo dtb
+		System.out.println("SAP XEP THEO DTB");
 		Collections.sort(dssv, new Comparator<SinhVien>() {
 
 			@Override
@@ -39,6 +39,20 @@ public class SapXepSinhVienVer2 {
 		});
 		for(SinhVien item: dssv) {
 			System.out.println(item);
+		}
+		
+		System.out.println("SAP XEP THEO TUOI");
+		Collections.sort(dssv, new Comparator<SinhVien>() {
+
+			@Override
+			public int compare(SinhVien o1, SinhVien o2) {
+				// TODO Auto-generated method stub
+				return Integer.compare(o1.getTuoi(), o2.getTuoi());
+			}
+			
+		});
+		for(SinhVien sv: dssv) {
+			System.out.println(sv);
 		}
 	}
 
