@@ -33,6 +33,18 @@ public class TimKiemLTHDT {
 		System.out.println("Sinh vien co dtb thap nhat la");
 		System.out.println(sv_min);
 		System.out.println("--------------------------------");
+		//Buoc 3: Tim sinh vien co tuoi lon nhat
+		SinhVien sv_max = Collections.max(dssv, new Comparator<SinhVien>() {
+
+			@Override
+			public int compare(SinhVien o1, SinhVien o2) {
+				// TODO Auto-generated method stub
+				return Integer.compare(o1.getTuoi(), o2.getTuoi());
+			}
+		});
+		System.out.println("Sinh vien co tuoi cao nhat la");
+		System.out.println(sv_max);
+		System.out.println("--------------------------------");
 	}
 
 }
