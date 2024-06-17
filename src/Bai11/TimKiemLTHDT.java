@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Predicate;
 
 import Bai11.model.SinhVien;
 
@@ -71,6 +72,33 @@ public class TimKiemLTHDT {
 				.toList();
 		System.out.println("Ket qua loc du lieu");
 		for(SinhVien item: kqloc) {
+			System.out.println(item);
+		}
+		System.out.println("--------------------------------");
+		//Buoc 6: Xay dung menh de logic - Predicate
+		//Loc tat ca sinh vien co 8 <= dtb <= 10 OR 18 <= tuoi <= 20
+		//Xay dung menh de logic 8 <= dtb <= 10
+		Predicate<SinhVien> dk_dtb = new Predicate<SinhVien>() {
+			@Override
+			public boolean test(SinhVien t) {
+				// TODO Auto-generated method stub
+				return t.getDtb() >= 8 && t.getDtb() <= 10;
+			}
+		};
+		//Xay dung menh de logic 18 <= tuoi <= 20
+		Predicate<SinhVien> dk_tuoi = new Predicate<SinhVien>() {		
+			@Override
+			public boolean test(SinhVien t) {
+				// TODO Auto-generated method stub
+				return t.getTuoi() >= 18 && t.getTuoi() <= 20;
+			}
+		};
+		//Tien hanh loc du lieu bang Stream va filter
+		List<SinhVien> dskq = dssv.stream()
+				.filter(dk_dtb.or(dk_tuoi))
+				.toList();
+		System.out.println("Ket qua loc du lieu 2");
+		for(SinhVien item: dskq) {
 			System.out.println(item);
 		}
 		System.out.println("--------------------------------");
