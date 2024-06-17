@@ -62,6 +62,18 @@ public class TimKiemLTHDT {
 			System.out.println(dssv.get(vitri));
 		}
 		System.out.println("--------------------------------");
+		//Buoc 5: Su dung Stream va cu phap Lambda
+		List<SinhVien> kqloc = dssv.stream()
+				.filter(sv -> sv.getDtb() >= 8)
+				.filter(sv -> sv.getDtb() <= 10)
+				.filter(sv -> sv.getTuoi() >= 18)
+				.filter(sv -> sv.getTuoi() <= 20)
+				.toList();
+		System.out.println("Ket qua loc du lieu");
+		for(SinhVien item: kqloc) {
+			System.out.println(item);
+		}
+		System.out.println("--------------------------------");
 	}
 
 }
