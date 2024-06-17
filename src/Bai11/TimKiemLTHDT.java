@@ -1,6 +1,8 @@
 package Bai11;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import Bai11.model.SinhVien;
@@ -18,6 +20,18 @@ public class TimKiemLTHDT {
 		for(SinhVien item: dssv) {
 			System.out.println(item);
 		}
+		System.out.println("--------------------------------");
+		//Buoc 2: Tim kiem sinh vien co dtb thap nhat
+		SinhVien sv_min = Collections.min(dssv, new Comparator<SinhVien>() {
+
+			@Override
+			public int compare(SinhVien o1, SinhVien o2) {
+				// TODO Auto-generated method stub
+				return Double.compare(o1.getDtb(), o2.getDtb());
+			}
+		});
+		System.out.println("Sinh vien co dtb thap nhat la");
+		System.out.println(sv_min);
 		System.out.println("--------------------------------");
 	}
 
