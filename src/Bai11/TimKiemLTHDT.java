@@ -45,6 +45,23 @@ public class TimKiemLTHDT {
 		System.out.println("Sinh vien co tuoi cao nhat la");
 		System.out.println(sv_max);
 		System.out.println("--------------------------------");
+		//Buoc 4: tim sv dau tientrong ds co ten la Quy
+		int vitri = Collections.binarySearch(dssv, new SinhVien("Binh", 0, 0), 
+				new Comparator<SinhVien>() {
+
+					@Override
+					public int compare(SinhVien o1, SinhVien o2) {
+						// TODO Auto-generated method stub
+						return o1.getHoten().compareTo(o2.getHoten());
+					}
+				});
+		if (vitri < 0) {
+			System.out.println("Khong tim thay ");
+		}else {
+			System.out.println("Vi tri cua sv co ten la Quy " + vitri);
+			System.out.println(dssv.get(vitri));
+		}
+		System.out.println("--------------------------------");
 	}
 
 }
