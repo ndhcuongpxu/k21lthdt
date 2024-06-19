@@ -52,5 +52,8 @@ public class SinhVien {
 		return "SinhVien [hoTen=" + hoTen + ", lop=" + lop + ", dshd=" + dshd + "]";
 	}
 	
+	public List<HoaDon> getHoaDon() {
+		return this.dshd;
+	}
 	
 }

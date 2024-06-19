@@ -1,7 +1,10 @@
 package bailuyentap;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.function.Predicate;
 
 import bailuyentap.model.BanhXe;
 import bailuyentap.model.DongCo;
@@ -83,9 +86,61 @@ public class QuanLySanPham {
 		
 		System.out.println(sv);
 		
-		
+		//Sap xep List<XeHoi> cars theo gia xe
+		Collections.sort(cars, new Comparator<XeHoi>() {
 
+			@Override
+			public int compare(XeHoi o1, XeHoi o2) {
+				// TODO Auto-generated method stub
+				return Double.compare(o1.getGiaCa(), o2.getGiaCa());
+			}
+			
+		});
+		for (SanPham sanPham : cars) {
+			System.out.println(sanPham);
+		}
 		
+		//Sap xep List<Laptop> theo RAM
+		Collections.sort(lts, new Comparator<Laptop>() {
+
+			@Override
+			public int compare(Laptop o1, Laptop o2) {
+				// TODO Auto-generated method stub
+				return Integer.compare(o1.getRam(), o2.getRam());
+			}
+			
+		});
+		for(Laptop item : lts) {
+			System.out.println(item);
+		}
+		
+		//Tim kiem SanPham co gia cao nhat trong HoaDon cua SinhVien
+		List<SanPham> dssp = sv.getHoaDon().get(0).getDssp();
+		SanPham tam = Collections.max(dssp, new Comparator<SanPham>() {
+			@Override
+			public int compare(SanPham o1, SanPham o2) {
+				// TODO Auto-generated method stub
+				return Double.compare(o1.getGiaCa(), o2.getGiaCa());
+			}
+		});
+		System.out.println(tam);
+		//Tim kiem bang Predicate
+		Predicate<SanPham> dk_tk = new Predicate<SanPham>() {
+			
+			@Override
+			public boolean test(SanPham t) {
+				// TODO Auto-generated method stub
+				return t.getGiaCa()>=1000 && t.getSoLuong()<=5;
+			}
+		};
+		List<SanPham> dskq = dssp.stream()
+				.filter(dk_tk)
+				.toList();
+		System.out.println("danh sach tim kiem");
+		for(SanPham item: dskq) {
+			System.out.println(item);
+		}
 	}
+	
 
 }
