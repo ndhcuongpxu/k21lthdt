@@ -51,7 +51,9 @@ public class XeHoi extends SanPham {
 	}
 	@Override
 	public String toString() {
-		return "XeHoi [dongco=" + dongco + ", dsbx=" + dsbx + "]";
+		return "XeHoi [dongco=" + dongco + ", dsbx=" + dsbx + ", getMaSP()=" + getMaSP() + ", getTenSP()=" + getTenSP()
+				+ ", getSoLuong()=" + getSoLuong() + ", getGiaCa()=" + getGiaCa() + "]";
 	}
+	
 	
 }

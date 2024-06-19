@@ -42,7 +42,9 @@ public class Laptop extends SanPham {
 	}
 	@Override
 	public String toString() {
-		return "Laptop [ram=" + ram + ", cpu=" + cpu + "]";
+		return "Laptop [ram=" + ram + ", cpu=" + cpu + ", getMaSP()=" + getMaSP() + ", getTenSP()=" + getTenSP()
+				+ ", getSoLuong()=" + getSoLuong() + ", getGiaCa()=" + getGiaCa() + "]";
 	}
+	
 	
 }
