@@ -5,7 +5,11 @@ import java.util.List;
 
 import bailuyentap.model.BanhXe;
 import bailuyentap.model.DongCo;
+import bailuyentap.model.HoaDon;
 import bailuyentap.model.Laptop;
+import bailuyentap.model.LopHoc;
+import bailuyentap.model.SanPham;
+import bailuyentap.model.SinhVien;
 import bailuyentap.model.XeHoi;
 
 public class QuanLySanPham {
@@ -59,6 +63,29 @@ public class QuanLySanPham {
 		for (Laptop item: lts) {
 			System.out.println(item);
 		}
+		//Tao 1 doi tuong kieu SV co 1 hoadon chua 5 sanpham gom laptop va XeHoi
+		
+		List<SanPham> listSanPham = new ArrayList<SanPham>();
+		
+		listSanPham.add(new Laptop(123, "Mac", 5, 1500, 365,"i7"));
+		listSanPham.add(car5);
+		listSanPham.add(new Laptop(234, "Win", 5, 1500, 365,"i7"));
+		listSanPham.add(car4);
+		listSanPham.add(new Laptop(357, "Dell", 5, 1500, 365,"i7"));
+		
+		HoaDon hoaDon = new HoaDon(123);
+		hoaDon.setDssp(listSanPham);
+		
+		System.out.println(hoaDon);
+		
+		SinhVien sv = new SinhVien("Nguyen Van Son", new LopHoc("CNTT"));
+		sv.addHoaDon(hoaDon);
+		
+		System.out.println(sv);
+		
+		
+
+		
 	}
 
 }

@@ -1,5 +1,6 @@
 package bailuyentap.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class LopHoc {
@@ -9,10 +10,10 @@ public class LopHoc {
 	 * @param tenLop
 	 * @param dssv
 	 */
-	public LopHoc(String tenLop, List<SinhVien> dssv) {
+	public LopHoc(String tenLop) {
 		super();
 		setTenLop(tenLop);
-		this.dssv = dssv;
+		this.dssv = new ArrayList<SinhVien>();
 	}
 	/**
 	 * @return the tenLop

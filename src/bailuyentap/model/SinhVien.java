@@ -1,8 +1,12 @@
 package bailuyentap.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SinhVien {
 	private String hoTen;
 	private LopHoc lop;
+	private List<HoaDon> dshd;
 	/**
 	 * @param hoTen
 	 * @param lop
@@ -11,10 +15,16 @@ public class SinhVien {
 		super();
 		setHoTen(hoTen);
 		this.lop = lop;
+		this.dshd = new ArrayList<HoaDon>();
+	}
+	
+	public void addHoaDon(HoaDon hd) {
+		this.dshd.add(hd);
 	}
 	/**
 	 * @return the hoTen
 	 */
+	
 	public String getHoTen() {
 		return hoTen;
 	}
@@ -36,9 +46,11 @@ public class SinhVien {
 	public void setLop(LopHoc lop) {
 		this.lop = lop;
 	}
+
 	@Override
 	public String toString() {
-		return "SinhVien [hoTen=" + hoTen + ", lop=" + lop + "]";
+		return "SinhVien [hoTen=" + hoTen + ", lop=" + lop + ", dshd=" + dshd + "]";
 	}
+	
 	
 }
