@@ -4,8 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class DBDAO {
-	private static DBDAO instance;
+public class DBConnection {
+	private static DBConnection instance;
 	//Doi tuong ket noi toi MySQL
 	private Connection conn;
 	private String ipadd = "172.16.0.240";
@@ -14,7 +14,7 @@ public class DBDAO {
 	private String username = "root";
 	private String password = "@Dmin1234";
 	
-	private DBDAO() {
+	private DBConnection() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			this.conn = DriverManager.getConnection("jdbc:mysql://" + ipadd + ":" +
@@ -34,11 +34,11 @@ public class DBDAO {
 		return this.conn;
 	}
 	
-	public static DBDAO getInstance() throws SQLException {
+	public static DBConnection getInstance() throws SQLException {
 		if(instance == null) {
-			instance = new DBDAO();
+			instance = new DBConnection();
 		}else if(instance.getConnection().isClosed()) {
-			instance = new DBDAO();
+			instance = new DBConnection();
 		}
 		return instance;
 	}
